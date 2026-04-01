@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Unlicense OR MIT
 
-//go:build (linux && !android) || freebsd || openbsd
-// +build linux,!android freebsd openbsd
+//go:build (linux && !android) || freebsd || openbsd || netbsd
+// +build linux,!android freebsd openbsd netbsd
 
 package app
 
