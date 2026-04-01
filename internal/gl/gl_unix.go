@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Unlicense OR MIT
 
-//go:build darwin || linux || freebsd || openbsd
-// +build darwin linux freebsd openbsd
+//go:build darwin || linux || freebsd || openbsd || netbsd
+// +build darwin linux freebsd openbsd netbsd
 
 package gl
 
@@ -14,6 +14,7 @@ import (
 
 /*
 #cgo CFLAGS: -Werror
+// might need to put netbsd here!
 #cgo linux freebsd LDFLAGS: -ldl
 
 #include <stdint.h>

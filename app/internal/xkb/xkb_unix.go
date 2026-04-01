@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Unlicense OR MIT
 
-//go:build (linux && !android) || freebsd || openbsd
-// +build linux,!android freebsd openbsd
+//go:build (linux && !android) || freebsd || openbsd || netbsd
+// +build linux,!android freebsd openbsd || netbsd
 
 // Package xkb implements a Go interface for the X Keyboard Extension library.
 package xkb
@@ -23,6 +23,8 @@ import (
 #cgo linux pkg-config: xkbcommon
 #cgo freebsd openbsd CFLAGS: -I/usr/local/include
 #cgo freebsd openbsd LDFLAGS: -L/usr/local/lib -lxkbcommon
+#cgo netbsd CFLAGS: -I/usr/pkg/include
+#cgo netbsd LDFLAGS: -L/usr/pkg/lib -lxkbcommon
 
 #include <stdlib.h>
 #include <xkbcommon/xkbcommon.h>
