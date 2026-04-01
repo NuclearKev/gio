@@ -51,9 +51,11 @@ import (
 
 /*
 #cgo linux pkg-config: wayland-client wayland-cursor
-#cgo freebsd openbsd LDFLAGS: -lwayland-client -lwayland-cursor
+#cgo freebsd openbsd netbsd LDFLAGS: -lwayland-client -lwayland-cursor
 #cgo freebsd CFLAGS: -I/usr/local/include
 #cgo freebsd LDFLAGS: -L/usr/local/lib
+#cgo netbsd CFLAGS: -I/usr/pkg/include
+#cgo netbsd LDFLAGS: -L/usr/pkg/lib
 
 #include <stdlib.h>
 #include <wayland-client.h>
