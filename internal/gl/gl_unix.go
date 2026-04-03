@@ -664,6 +664,8 @@ func (f *Functions) load(forceES bool) error {
 		libNames = []string{"/System/Library/Frameworks/OpenGLES.framework/OpenGLES"}
 	case runtime.GOOS == "android":
 		libNames = []string{"libGLESv2.so", "libGLESv3.so"}
+	case runtime.GOOS == "netbsd":
+		libNames = []string{"libGL.so"}
 	default:
 		libNames = []string{"libGLESv2.so.2", "libGLESv2.so.3.0"}
 	}
