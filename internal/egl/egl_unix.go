@@ -109,3 +109,7 @@ func eglCreateWindowSurface(disp _EGLDisplay, conf _EGLConfig, win NativeWindowT
 func eglWaitClient() bool {
 	return C.eglWaitClient() == C.EGL_TRUE
 }
+
+func eglBindAPI(api _EGLint) bool {
+	return C.eglBindAPI(C.EGLenum(api)) == C.EGL_TRUE
+}
